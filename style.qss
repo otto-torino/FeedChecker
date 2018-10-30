@@ -1,0 +1,14 @@
+QLabel[labelClass="hjsonLabel"] {
+    background-color: #eee;
+    color: black;
+    padding: 10;
+}
+
+QPushButton[buttonClass="hjsonButton"] {
+}
+
+QTextEdit {
+    background-color: #111;
+    color: #fff;
+    height: 100%;
+}
