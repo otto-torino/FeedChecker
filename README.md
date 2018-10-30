@@ -4,6 +4,11 @@
 
 A PyQt5 application which checks news-please feeds list for bad sources (4XX, 5XX response codes)
 
+## Requirements
+
+- PyQt5
+- grequests (`pip install grequests`)
+
 ## Features
 
 rsnapshot gui:
