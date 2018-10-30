@@ -11,8 +11,6 @@ A PyQt5 application which checks news-please feeds list for bad sources (4XX, 5X
 
 ## Features
 
-rsnapshot gui:
-
 - select hjson configuration file
 - run the check
 - display requests and results in a text field
