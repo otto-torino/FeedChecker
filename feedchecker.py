@@ -7,13 +7,14 @@ MIT License
 Company Otto srl <https://www.otto.to.it>
 """
 
+import json
 import os
 import sys
 
 from PyQt5 import QtCore
 from PyQt5.QtGui import QIcon, QMovie, QTextCursor
 from PyQt5.QtWidgets import (QAction, QApplication, QDesktopWidget,
-                             QFileDialog, QLabel, QMainWindow,
+                             QFileDialog, QInputDialog, QLabel, QMainWindow,
                              QMenu, QMessageBox, QPushButton, QSystemTrayIcon,
                              QTextEdit, QVBoxLayout, QWidget, qApp)
 
@@ -197,10 +198,21 @@ class MainWindow(QMainWindow):
         if returncode == 0 or returncode == 2:
             # save last sync
             # show success dialog
-            QMessageBox.information(
-                self, 'Feed Checker',
-                self.translate('MainWindow', 'Check successfully executed'),
-                QMessageBox.Ok)
+            text, ok = QInputDialog.getText(
+                self, self.translate('MainWindow', 'Ok buddy'),
+                self.translate(
+                    'MainWindow',
+                    'If you want to save the corrected hjson list enter the file path and press enter, otherwise 🖕'
+                ))
+            if ok:
+                corrected_hjson = self.worker.get_corrected_hjson()
+                with open(text, 'w') as outfile:
+                    json.dump(
+                        corrected_hjson,
+                        outfile,
+                        sort_keys=True,
+                        indent=4,
+                        ensure_ascii=False)
 
     def set_busy(self, busy):
         """ Is the application busy? """

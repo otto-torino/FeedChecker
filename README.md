@@ -16,6 +16,7 @@ rsnapshot gui:
 - select hjson configuration file
 - run the check
 - display requests and results in a text field
+- save a new version of hjson without bad responses to the provided path
 - report errors
 - report success
 - it and en locales provided
