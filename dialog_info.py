@@ -24,12 +24,12 @@ class InfoDialog(QDialog):
         main_layout = QVBoxLayout()
         main_layout.setSpacing(20)
 
-        title = QLabel('<h1>Otto Backup - v1.0.0</h1>')
+        title = QLabel('<h1>Feed Checker - v1.0.0</h1>')
         title.setAlignment(QtCore.Qt.AlignCenter)
         description = QLabel(
             self.translate(
                 'InfoDialog',
-                'GUI for the rsnapshot command, manage your backups with ease.'
+                'Check news-please hjson config for bad sources.'
             ))
         description.setAlignment(QtCore.Qt.AlignCenter)
         image = QLabel('<img src="%s" />' % icon('icon.png'))
